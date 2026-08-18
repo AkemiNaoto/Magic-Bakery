@@ -7,7 +7,7 @@ public class Machine : MonoBehaviour
 
     [SerializeField] private GameObject Caixa;
     [SerializeField] private float Doce, Cooldown;
-    private bool PodeProduzir = false;
+    private bool PodeProduzir, Usou = false;
 
     void Start()
     {
@@ -41,7 +41,6 @@ public class Machine : MonoBehaviour
     public void Produzindo()
     {
 
-        bool Usou = false;
         if (Input.GetButtonDown("Fire1"))
         {
 
@@ -53,6 +52,7 @@ public class Machine : MonoBehaviour
 
                     Doce++;
                     Usou = true;
+                    Cooldown = 0.0f;
 
                 }
 
@@ -70,23 +70,17 @@ public class Machine : MonoBehaviour
 
         }
 
-        while (Usou == true)
+        if (Usou == true)
         {
 
-            if (Usou == true)
+            Cooldown += Time.deltaTime;
+
+            if (Cooldown >= 8.0f)
             {
 
-                Cooldown += Time.deltaTime;
-
-                if (Cooldown >= 8.0f)
-                {
-
-                    Usou = false;
-
-                }
+                Usou = false;
 
             }
-
 
         }
 
