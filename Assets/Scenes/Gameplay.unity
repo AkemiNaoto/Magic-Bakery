@@ -322,6 +322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caixa
       objectReference: {fileID: 0}
+    - target: {fileID: 6556700542563059420, guid: e185bd9c7009e0845b56362c90baa6c5, type: 3}
+      propertyPath: m_TagString
+      value: Caixa
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -549,6 +553,7 @@ GameObject:
   - component: {fileID: 1694761663}
   - component: {fileID: 1694761662}
   - component: {fileID: 1694761665}
+  - component: {fileID: 1694761667}
   - component: {fileID: 1694761666}
   m_Layer: 0
   m_Name: Player
@@ -570,8 +575,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   Caixas: 0
-  Caixa: {fileID: 6556700542563059420, guid: e185bd9c7009e0845b56362c90baa6c5, type: 3}
+  CaixasColetados: []
+  PosicoesCaixas: []
   PosAtual: {fileID: 0}
+  Soltar: 0
 --- !u!212 &1694761663
 SpriteRenderer:
   serializedVersion: 3
@@ -621,7 +628,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  m_Sprite: {fileID: 7659496831447170300, guid: e372635fefc11924b8d9f112aef99458, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -641,8 +648,8 @@ Transform:
   m_GameObject: {fileID: 1694761661}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.88574, y: -1.31429, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.65, y: 0.362, z: 0}
+  m_LocalScale: {x: 0.6929, y: 0.6929, z: 0.6929}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -674,8 +681,30 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &1694761666
-CircleCollider2D:
+--- !u!95 &1694761666
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694761661}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e0e558008f6ecd5428355db7fa9308ec, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &1694761667
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -708,8 +737,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.007841468, y: 0.03668964}
-  m_Radius: 0.5988122
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.8579999, y: 3.7844615}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.856, y: 3.7044094}
+  m_EdgeRadius: 0
 --- !u!1 &1721898230
 GameObject:
   m_ObjectHideFlags: 0

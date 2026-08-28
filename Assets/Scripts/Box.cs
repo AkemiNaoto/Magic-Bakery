@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,23 +7,29 @@ public class Box : MonoBehaviour
 {
 
     [SerializeField] private Player P;
-    private bool PodeClicar = false;
+    [SerializeField] private bool PodeClicar = false;
+    public int QutItem = 10;
+    private SpriteRenderer Atual;
+    public bool PegouCaixa = false;
+    public bool SoltouCaixa = false;
+   
     void Start()
     {
 
         P = GameObject.FindWithTag("Player").GetComponent<Player>();
+        Atual = GetComponent<SpriteRenderer>();
+        
 
     }
-
 
     void Update()
     {
 
-        PegarCaixa();
+        //LevarCaixa();
 
     }
 
-    public void OnTriggerEnter2D(Collider2D Col)
+   /* public void OnTriggerEnter2D(Collider2D Col)
     {
 
 
@@ -35,21 +43,24 @@ public class Box : MonoBehaviour
 
     }
 
-    public void PegarCaixa()
+    public void LevarCaixa()
     {
-
-        if (PodeClicar == true)
+        
+        if(PegouCaixa == true && PodeClicar == true)
         {
-
-            if (Input.GetButtonDown("Fire1"))
-            {
-
-                P.Caixas += 1;
-                Destroy(gameObject);
-
-            }
+            
+            transform.position = new Vector2(P.transform.position.x, P.transform.position.y);
 
         }
 
-    }
+        else if(SoltouCaixa == true)
+        {
+            
+            transform.position = new Vector2(P.transform.position.x, P.transform.position.y);
+            SoltouCaixa = false;
+
+        }
+
+    }*/
+
 }

@@ -41,7 +41,7 @@ public class Machine : MonoBehaviour
     public void Produzindo()
     {
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
 
             if (PodeProduzir == true)
@@ -75,7 +75,7 @@ public class Machine : MonoBehaviour
 
             Cooldown += Time.deltaTime;
 
-            if (Cooldown >= 8.0f)
+            if (Cooldown >= 3.0f)
             {
 
                 Usou = false;
