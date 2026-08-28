@@ -18,6 +18,7 @@ public class Box : MonoBehaviour
 
         P = GameObject.FindWithTag("Player").GetComponent<Player>();
         Atual = GetComponent<SpriteRenderer>();
+        transform.position = new Vector2(-18.23f,-0.67f);
         
 
     }
